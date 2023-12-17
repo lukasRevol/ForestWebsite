@@ -60,7 +60,7 @@ body {
 	width: fit-content;
 	display: flex;
 	align-items: center;
-	padding: 0 2em;
+	padding: 1em 2em;
 	cursor: pointer;
 	&_icon {
 		margin-right: 0.4em;
@@ -259,8 +259,8 @@ body {
   justify-content: center;
 	background-color: $bg-color-dark;
   .wrapper {
-    width: 100%;
     display: flex;
+    width: 100%;
     padding: 4em 2em;
     justify-content: space-between;
     align-items: start;
@@ -319,6 +319,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .nav-bar {
+    .menu {
+      display: none;
+    }}
 	.about_box {
 		grid-template-columns: repeat(1, 1fr);
 		grid-template-rows: repeat(2, auto);
@@ -336,9 +340,17 @@ footer {
 	}
 
   .other {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+    .wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // width: 100%;
+      // display: flex;
+      // padding: 4em 2em;
+      // justify-content: space-between;
+      // align-items: start;
+    }
     .logo {
       &_icon {
         margin-right: 1em;
