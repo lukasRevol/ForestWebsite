@@ -1,0 +1,257 @@
+//-------------------------------------
+//   IMPORTING EXTERNAL *.SCSS FILES
+//-------------------------------------
+@use '_colors' as *;
+@use '_reset' as *;
+@use '_key-frames' as *;
+
+// a special class added to containers whose width is to be limited to 1400px
+.wrapper {
+	min-width: 300px;
+	max-width: 1400px;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+//-------------------------------------
+//   NAVIGATION
+//-------------------------------------
+
+.nav {
+	// position:fixed;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: $bg-color-light;
+}
+
+.nav-bar {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	width: 100%;
+	.logo {
+		display: flex;
+		align-items: center;
+		padding: 0 2em;
+		cursor: pointer;
+		&_icon {
+			margin-right: 0.4em;
+			height: clamp(1.6rem, 4vw, 3rem);
+		}
+		&_text {
+			font-weight: 300;
+			font-size: clamp(1.4rem, 5vw, 4em);
+		}
+	}
+	.menu {
+		display: flex;
+		align-content: center;
+		&_item {
+			padding: clamp(1em, 3.5vw, 2em) clamp(1em, 3.5vw, 3em);
+			text-decoration: none;
+			font-size: clamp(1rem, 2vw, 1.8rem);
+			&:visited,
+			&:link {
+				color: $font-color-dark;
+			}
+			&:hover {
+				background-color: $accent-color-second;
+				color: $font-color-light;
+			}
+		}
+	}
+}
+
+//-------------------------------------
+//   HEADER
+//-------------------------------------
+
+.header {
+	height: clamp(300px, 50vw, 600px);
+	background-image: url('../img/jungle-1920.jpg');
+	background-size: cover;
+	background-position: center;
+	.hero-shadow {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.63);
+	}
+	.hero-text {
+		padding: 0 2em;
+		width: 100%;
+		color: $font-color-light;
+		font-size: clamp(1rem, 2vw, 2rem);
+	}
+}
+
+//-------------------------------------
+//  SECTIONS
+//-------------------------------------
+
+.section-heading {
+	margin-top: 1.8em;
+	margin-bottom: 1em;
+	text-transform: uppercase;
+	font-weight: 100;
+	font-size: clamp(2rem, 4vw, 4rem);
+}
+
+//-------------------------------------
+//   ABOUT US - SECTION
+//-------------------------------------
+
+.about {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	&_box {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: clamp(1em, 4vw, 4em);
+		margin-bottom: 5em;
+		padding: 0 2em;
+		&_img {
+			width: 100%;
+		}
+		&_text {
+			font-size: clamp(1rem, 2vw, 2rem);
+		}
+	}
+}
+
+//-------------------------------------
+//   ADVENTURE - SECTION
+//-------------------------------------
+
+.adventure {
+	height: clamp(150px, 30vw, 300px);
+	background-image: url('../img/girl-1920.jpg');
+	background-size: cover;
+	background-position: center;
+	&_box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.63);
+		&_text {
+			padding: 1em clamp(2em, 10vw, 4em);
+			font-size: clamp(1rem, 4vw, 3rem);
+			color: $font-color-light;
+			border: 1px solid white;
+		}
+	}
+}
+
+.text {
+	color: purple;
+}
+
+//-------------------------------------
+//   OFFER - SECTION
+//-------------------------------------
+
+.offer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	&_description {
+		margin-bottom: 2em;
+	}
+}
+
+.offers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5em;
+  
+  
+
+	&_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 3em;
+    margin: 1em;
+    font-size: clamp(.9rem, 2vw, 1.8rem);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.322);
+    border-radius: 15px;
+		&--title {
+      font-size: clamp(1.5rem, 3vw, 3rem);
+		}
+		&--price {
+      font-size: clamp(2rem, 4vw, 4rem);
+      margin: 0.4em;
+      span {
+        font-size: clamp(2.5rem, 4vw, 5rem);
+      }
+		}
+		&--option-box {
+      .option {
+        margin-bottom: .6em;
+        i {
+          color: $accent-color-main;
+        }
+      }
+
+      .unavailable {
+        color: #888;
+        i {
+          color: #888;
+        }
+      }
+		}
+    &--btn {
+      margin-top: 1.4em;
+      padding: .4em 3em;
+      font-size: clamp(.9rem, 2vw, 1.8rem);
+      background: none;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.295);
+      cursor: pointer;
+      &:hover {
+        background-color: $accent-color-main;
+        box-shadow: 0 4px 10px $accent-color-main;
+      }
+    }
+	}
+}
+
+
+
+//-------------------------------------
+//   FOOTER
+//-------------------------------------
+
+footer {
+	height: 600px;
+	background-color: #333;
+}
+
+//-------------------------------------
+//   MEDIA - BREAK POINTS
+//-------------------------------------
+
+@media (max-width: 768px) {
+	.about_box {
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(2, auto);
+	}
+
+	.header {
+		background-image: url('../img/jungle-640.jpg');
+	}
+}
